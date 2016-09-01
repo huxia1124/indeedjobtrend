@@ -3,3 +3,5 @@
 ################################################################################
 
 /DataConvert/bin/Debug
+/DataConvert/obj/Debug
+/packages/Newtonsoft.Json.9.0.1
