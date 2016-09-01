@@ -15,6 +15,11 @@ namespace DataConvert
     {
         static void Main(string[] args)
         {
+            if(args.Length == 0)
+            {
+                PrintUsage();
+                return;
+            }
             Console.WriteLine("Begin to retrieve data from indeed.com...");
             Console.WriteLine("Parameters:");
             String fullQuery = "";
@@ -108,7 +113,16 @@ namespace DataConvert
                 dtStart = dtStart.AddDays(1);
             }
             export.ExportToFile(fileName);
-
+            Console.WriteLine(fileName + " generated!");
+        }
+        static void PrintUsage()
+        {
+            Console.WriteLine("Usage:");
+            Console.WriteLine("\tDataConvert.exe [keyword1] [keyword2]...");
+            Console.WriteLine("\nExample:");
+            Console.WriteLine("\tDataConvert.exe JAVA C++ Python");
+            Console.WriteLine("\n\nOutput file will be indeed.csv.");
         }
     }
+
 }
